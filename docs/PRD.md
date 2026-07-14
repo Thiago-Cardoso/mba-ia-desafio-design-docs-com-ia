@@ -2,7 +2,7 @@
 
 > **Documentos relacionados:** [RFC](RFC.md) (proposta técnica) · [FDD](FDD.md) (design de implementação) · [ADRs](adrs/README.md) (decisões) · [Tracker](TRACKER.md) (rastreabilidade)
 
-## 1. Resumo e contexto
+## 1. Resumo e contexto da feature
 
 O Order Management System (OMS) vai ganhar um mecanismo de **webhooks outbound**: sempre que o status de um pedido mudar (ex.: `PROCESSING → SHIPPED`), os clientes B2B inscritos recebem uma notificação HTTP assinada em seus próprios endpoints, em menos de 10 segundos. A feature inclui API de configuração (cadastro, edição, remoção, listagem e filtro de eventos por status), histórico de entregas consultável, reenvio automático com backoff em caso de falha e reprocessamento manual administrativo. A decisão técnica foi tomada em reunião entre tech lead, PM, engenharia e segurança (ver [TRANSCRICAO.md](../TRANSCRICAO.md)); este PRD registra o problema, o escopo e os critérios de sucesso.
 
@@ -37,7 +37,7 @@ Para esses clientes, "tempo real" significa **qualquer latência abaixo de 10 se
 | O4 | Prazo comercial | Data de disponibilização em produção | Fim de novembro ([09:45] Marcos); estimativa de 3 sprints ([09:46] Larissa) |
 | O5 | Retenção dos clientes solicitantes | Atlas, MaxDistribuição e Nova Cargo ativos e integrados via webhook | 3 de 3 integrados; risco de churn da Atlas neutralizado ([09:00] Marcos) |
 
-## 5. Escopo
+## 5. Escopo (incluso e fora de escopo)
 
 ### Incluso
 
